@@ -1,0 +1,12 @@
+!pip install -q datetime
+import pandas as pd
+import io
+import requests
+
+
+url = 'https://www.cryptodatadownload.com/cdd/gemini_ETHUSD_2016_1min.csv'
+
+  
+
+s=requests.get(url, verify=False).content
+c=pd.read_csv(io.StringIO(s.decode('utf-8'))) 
